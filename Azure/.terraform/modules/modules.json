@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"AzVM_Win","Source":"registry.terraform.io/Azure/compute/azurerm","Version":"3.14.0","Dir":".terraform/modules/AzVM_Win"},{"Key":"AzVM_Win.os","Source":"./os","Dir":".terraform/modules/AzVM_Win/os"},{"Key":"","Source":"","Dir":"."},{"Key":"network","Source":"registry.terraform.io/Azure/network/azurerm","Version":"3.5.0","Dir":".terraform/modules/network"}]}

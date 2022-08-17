@@ -11,7 +11,7 @@ resource "azurerm_resource_group" "example" {
 
 module "AzVM_Win" {
   for_each                      = toset(local.env)
-  source                        = "git::https://github.com/Azure/terraform-azurerm-compute.git"
+  source                        = "Azure/compute/azurerm"
   resource_group_name           = azurerm_resource_group.example.name
   is_windows_image              = true
   vm_hostname                   = "Kyle-${each.value}" // line can be removed if only one VM module per resource group
@@ -26,7 +26,7 @@ module "AzVM_Win" {
 }
 
 module "network" {
-  source              = "git::https://github.com/Azure/terraform-azurerm-network.git"
+  source              = "Azure/network/azurerm"
   resource_group_name = azurerm_resource_group.example.name
   subnet_prefixes     = ["10.0.1.0/24"]
   subnet_names        = ["TFsubnet1"]
