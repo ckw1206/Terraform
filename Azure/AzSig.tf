@@ -3,13 +3,13 @@ resource "azurerm_resource_group" "sigrg" {
   location = var.deploy_location
 }
 
-# Creates Shared Image Gallery
+# Creates shared image gallery
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/shared_image_gallery
 resource "azurerm_shared_image_gallery" "sig" {
   name                = "ImageGallery"
   resource_group_name = azurerm_resource_group.sigrg.name
   location            = azurerm_resource_group.sigrg.location
-  description         = "Shared images"
+  description         = "shared images"
 }
 
 #Creates image definition

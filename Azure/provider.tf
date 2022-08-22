@@ -9,7 +9,7 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name  = "Test-Kyle"
+    resource_group_name  = "AzureDevops-Kyle-Pool"
     storage_account_name = "kylestorage202207"
     container_name       = "tfstate"
     key                  = "container_registry.tfstate"
