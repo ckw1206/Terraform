@@ -1,7 +1,6 @@
 variable "deploy_location" {
   type        = string
   default     = "eastus"
-  description = "The Azure Region in which all resources in this example should be created."
 }
 
 variable "deploy_env" {
@@ -22,11 +21,13 @@ variable "sig_image_def" {
 variable "img_WinSrv2019std" {
   type        = list(string)
   default     = ["WinSrv2019std","Windows","Kyle","WindowsServer","2019-Standard"]
+  description = "name, os-type, publisher, offer, sku"
 }
 
 variable "img_RHEL82" {
   type        = list(string)
   default     = ["RHEL8.2","Linux","Kyle","RHEL","8.2"]
+  description = "name, os-type, publisher, offer, sku"
 }
 
 # variable "vm_os_simple" {
