@@ -1,5 +1,3 @@
-
-
 resource "azurerm_resource_group" "compute" {
   name     = "Terraform-Kyle-Compute"
   location = var.deploy_location
@@ -9,13 +7,11 @@ module "network" {
   source              = "Azure/network/azurerm"
   resource_group_name = azurerm_resource_group.compute.name
   subnet_prefixes     = ["10.0.1.0/24"]
-  subnet_names        = ["TFsubnet1"]
-  vnet_name           = "TF-Kyle-net"
+  subnet_names        = ["Subnet1"]
+  vnet_name           = "Main-vNet"
 
   depends_on = [azurerm_resource_group.compute]
 }
-
-
 
 # module "AzVM_Win" {
 #   for_each                      = toset(var.deploy_env)
