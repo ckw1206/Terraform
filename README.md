@@ -1,2 +1,0 @@
-# Terraform
-for Terraform dev
