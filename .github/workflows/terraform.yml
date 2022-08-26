@@ -47,7 +47,7 @@ name: 'Terraform'
 on:
   push:
     branches:
-    - "main"
+    - "GitActionTest"
   pull_request:
 
 permissions:
