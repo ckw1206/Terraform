@@ -21,7 +21,7 @@ resource "azurerm_shared_image" "WinSrv2019" {
   location            = azurerm_resource_group.sigrg.location
   hyper_v_generation  = "V1"
   os_type             = var.img_WinSrv2019std[1]
-#  specialized         = true
+  #  specialized         = true
 
   identifier {
     publisher = var.img_WinSrv2019std[2]
