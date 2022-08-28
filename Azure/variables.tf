@@ -5,7 +5,7 @@ variable "deploy_location" {
 
 variable "deploy_env" {
   type    = list(string)
-  default = ["dev"]
+  default = ["dev01"]
 }
 
 variable "sig_resourceid" {
