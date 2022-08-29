@@ -5,18 +5,18 @@ variable "deploy_location" {
 
 variable "deploy_env" {
   type    = list(string)
-  default = ["dev"]
+  default = ["dev01"]
 }
 
 variable "sig_resourceid" {
   type    = string
-  default = "/subscriptions/15460747-219f-4ef3-8606-651f1fa0d4bc/resourceGroups/Test-Kyle/providers/Microsoft.Compute/galleries/ComputeGallery/images/"
+  default = "/subscriptions/15460747-219f-4ef3-8606-651f1fa0d4bc/resourceGroups/Terraform-Kyle-ComputeGallery/providers/Microsoft.Compute/galleries/ImageGallery/images/"
 }
 
-variable "sig_image_def" {
-  type    = list(string)
-  default = ["WinServer2019std", "RHEL-8.2"]
-}
+# variable "sig_image_def" {
+#   type    = list(string)
+#   default = ["WinSrv2019std", "RHEL-8.2"]
+# }
 
 variable "img_WinSrv2019std" {
   type        = list(string)
