@@ -46,6 +46,6 @@ module "AzVM_Windows" {
 #   vm_os_offer             = "${var.img_RHEL82[3]}"
 #   vm_os_sku               = "${var.img_RHEL82[4]}"
 #   delete_os_disk_on_termination = true
-# 
+
 #   depends_on = [azurerm_resource_group.compute]
 # }
