@@ -35,29 +35,13 @@ resource "azurerm_shared_image" "RHEL82Specialized" {
   gallery_name        = azurerm_shared_image_gallery.sig.name
   resource_group_name = azurerm_resource_group.sigrg.name
   location            = azurerm_resource_group.sigrg.location
-  hyper_v_generation  = "V1"
+  hyper_v_generation  = "V1" #V2 is ok
   os_type             = var.img_RHEL82[1]
-  specialized         = true // didn't run the sysprep
+  specialized         = true # set as true since the image didn't run the sysprep
 
   identifier {
     publisher = var.img_RHEL82[2]
     offer     = var.img_RHEL82[3]
     sku       = "${var.img_RHEL82[4]}specialized"
-  }
-}
-
-resource "azurerm_shared_image" "RHEL82V2Specialized" {
-  name                = "${var.img_RHEL82[0]}V2-specialized"
-  gallery_name        = azurerm_shared_image_gallery.sig.name
-  resource_group_name = azurerm_resource_group.sigrg.name
-  location            = azurerm_resource_group.sigrg.location
-  hyper_v_generation  = "V2"
-  os_type             = var.img_RHEL82[1]
-  specialized         = true // didn't run the sysprep
-
-  identifier {
-    publisher = var.img_RHEL82[2]
-    offer     = var.img_RHEL82[3]
-    sku       = "${var.img_RHEL82[4]}V2-specialized"
   }
 }
