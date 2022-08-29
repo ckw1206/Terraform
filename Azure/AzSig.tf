@@ -35,7 +35,7 @@ resource "azurerm_shared_image" "RHEL82" {
   gallery_name        = azurerm_shared_image_gallery.sig.name
   resource_group_name = azurerm_resource_group.sigrg.name
   location            = azurerm_resource_group.sigrg.location
-  hyper_v_generation  = "V1"
+  hyper_v_generation  = "V2"
   os_type             = var.img_RHEL82[1]
 
   identifier {
