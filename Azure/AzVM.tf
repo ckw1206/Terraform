@@ -33,19 +33,19 @@ module "AzVM_Windows" {
   depends_on = [azurerm_resource_group.compute]
 }
 
-module "AzVM_Linux" {
-  for_each                = toset(var.deploy_env)
-  source                  = "git::https://github.com/ckw1206/my-terraform-azurerm-compute.git"
-  resource_group_name     = azurerm_resource_group.compute.name
-#  public_ip_dns          = ["linsimplevmips"] // change to a unique name per datacenter region
-  vm_hostname             = "Linux-${each.value}"
-  vnet_subnet_id          = module.network.vnet_subnets[0]
-  nb_public_ip            = "1"
-  vm_os_id                = "${var.sig_resourceid}${var.img_RHEL82[0]}"
-  vm_os_publisher         = "${var.img_RHEL82[2]}"
-  vm_os_offer             = "${var.img_RHEL82[3]}"
-  vm_os_sku               = "${var.img_RHEL82[4]}"
-  delete_os_disk_on_termination = true
+# module "AzVM_Linux" {
+#   for_each                = toset(var.deploy_env)
+#   source                  = "git::https://github.com/ckw1206/my-terraform-azurerm-compute.git"
+#   resource_group_name     = azurerm_resource_group.compute.name
+# #  public_ip_dns          = ["linsimplevmips"] // change to a unique name per datacenter region
+#   vm_hostname             = "Linux-${each.value}"
+#   vnet_subnet_id          = module.network.vnet_subnets[0]
+#   nb_public_ip            = "1"
+#   vm_os_id                = "${var.sig_resourceid}${var.img_RHEL82[0]}"
+#   vm_os_publisher         = "${var.img_RHEL82[2]}"
+#   vm_os_offer             = "${var.img_RHEL82[3]}"
+#   vm_os_sku               = "${var.img_RHEL82[4]}"
+#   delete_os_disk_on_termination = true
 
-  depends_on = [azurerm_resource_group.compute]
-}
+#   depends_on = [azurerm_resource_group.compute]
+# }
