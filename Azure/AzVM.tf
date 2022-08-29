@@ -13,7 +13,6 @@ module "network" {
   depends_on = [azurerm_resource_group.compute]
 }
 
-
 module "AzVM_Windows" {
   for_each            = toset(var.deploy_env)
   source              = "git::https://github.com/ckw1206/my-terraform-azurerm-compute.git"
